@@ -28,6 +28,12 @@ function errorResponse(msg){
     }
 }
 
+app.get("/",(req,res)=>{
+   res.json({
+      message:"Bajaj BFHL API is running"
+   });
+});
+
 app.get("/health",(req,res)=>{
     res.status(200).json({
         is_success:true,
@@ -138,7 +144,7 @@ app.post("/bfhl",async(req,res)=>{
     }
 });
 
-const PORT=process.env.PORT || 5000;
+const PORT=process.env.PORT ||3000;
 
 module.exports = app;
 
